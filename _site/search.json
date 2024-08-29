@@ -1,0 +1,134 @@
+[  {
+    "title": "GitHub as a one-stop shop",
+"description": "Store all your project artefacts in a single, searchable location on GitHub","section": "Blog",    "layout": "post",
+    "hasFrontmatterDate": true,
+    "date": "19 February 2024",
+    "templateContent": "many people will familiar with development environment setup where they use github repositories store manage code rely plethora tools creating managing all other project outputs while each tool can very effective its own right this often leads scattered deliverables causing confusion increased risk inconsistency post outline how consolidate your artefacts by leveraging open source tools: actions automating software workflows projects planning tracking work discussions documenting discovery communicating users pages hosting static websites docs folder user guidance technical concepts markdown mermaid simple diagrams using like syntax excalidraw editable whiteboard sketches which saved images marp slide decks slides these suggestions are summarised below clicking diagram import into web editor access links examples from moj note that includes recommendations february 2024 more detailed date instructions please refer provided first why everything compared existing discussed may offer fewer features require steeper learning curve additionally clear migration paths lacking making challenging switch platforms however there several advantages feel make worthwhile especially starting scratch searchability having tickets documentation one place makes super easy search through find unfortunately used limited read history thankfully rolled out new engine browser 2023 possible relevant results reasonable speed knowing helps interoperability exclusively easier link automate across hence track review deploy changes well collaborate team standardisation treating means leverage same practices applied development: version control automation reusability maintainability improved quality enterprise cost lead savings reason less significant teams company unlikely ! actually everything: limits size files allowed moreover git great storing binary diffable instead should large dedicated file lfs although secrets securely credentials personal designed comprehensive secret management consider infrastructure based solution such aws manager microsoft azure key vault still leaves effectively incorporated automates allowing build test directly their since release 2019 become preferred ci popularity corroborates integrated approach advocated also yaml configuration friendly marketplace offers vibrant growing ecosystem wide range pre built due support complex industry adoption been gradual uptake accelerate capabilities added job summaries importer validation thoughtworks upgraded rating trial adopt classic launched 2016 infamous example releasing product too early consisted primarily kanban board lacked basic backlog view deterring most august 2022 released revamped intuitive flexible customisable interface now plan either table created organisation level them linkable independent incorporate issues organisations reciprocal issue various ways simplest automations update status when closed epics structure agile backlogs break down manageable three options 1 task lists have around 2014 currently working upgrade private beta stay tuned updates! pull requests within repository #number pattern: x #739 https: github.com octo org repo 740 add delight experience tasks complete :tada: cross linking need specify full url draft until ready convert leave smaller recommend assigning label parent identify display filter does yet relationships opening screen navigate back epic tracked section next child navigating straightforward workaround request discussion description format: epic: bullet list forces render title improving clarity 2 milestones associated additional column roadmap layout complicated nested hierarchy group explained ```mermaid flowchart > |task list|epic pr milestone supported record core even split amongst multiple disable non enforce rule 3 labels epics! seem obvious option unlike set dates completion close roadmaps displays items timeline prefer grouping quarter modify field public alternatively create separate quarters encourages owners delivery managers follow good practice : shorter than limiting number undertaken per giving precise accurate start requirement analysis moscow method prioritise requirements splitting must haves could done drafts later converted once fleshed acceptance testing uat typical scenario involves migrating sure functionality replicated way progress spreadsheet row columns recording different successfully those internal database external concept straightforward: template generate ticket artefact needs migrated replace can: assign accounts named individuals single communication take advantage about forms recorded managed differently depending audience case best reside outside scope article some pointers python architecture dependencies keep information alternative wikis achieved astro bookings would reasons uses variant called flavored liquid expand provide accessible tables chunks reusable content basics suffice whilst recommended go process sometimes onerous codeowners skip approval workflow useful long running tests few things structuring folder: monorepo folders root sub multi specific application combine made against via publishing website site generators host service instance blog hosted generated eleventy plugin publish our tech radar evaluating completing transient type kept avoid clutter members reflect current state just 2021 enabled default settings limit approvals simplifies mean swamp transferring sanitised luckily advanced formatting copy paste closing allow participate idea generation comments reactions polls everyone involved check notifications regularly cause already another slack thumb whether might want time discussion! javascript lets particularly handy adding places save found steep available only suggest natively diagramming whiteboarding native export svg png embed scene data preferable because text nicely stick then upload image nifty mode reviewing edit download vs extension locally passing raw see hyperlink lastly plus outcome collaborative sessions tend get lost exported formats including pdf html similar action exporting preview bit decided format iceberg readme.md better visibility commit fine exploratory production something generates part merge conclusion historically mainly valued recent enhancements coupled integrate platform circumstances beneficial leading efficiency consistency transparency any acknowledgements thank following resources: pipelines crew being experimenting! saturday coding club providing insightful richard baguley introducing julia lawrence encouraging give try calum barnett gds style guide chatgpt3.5 proofreading touch polish",
+    "url": "/san-eleventy-test/blog/posts/github-as-a-one-stop-shop/"
+  },  {
+    "title": "About",
+"section": "Home",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "data analytics engineers bridge gap between producers users developing analytical pipelines self service tools acquire transform making available platform use layered lake centric approach which summarised engineering architecture what work with digital teams help them make from their services validate deduplicate standardise extracted produce curated sets where possible provide historical support reproducible longitudinal analysis this by building running ourselves supporting infrastructure also contribute development other foundational including uploader airflow create derived table register internal only extractor various packages value enable access way that more reliable secure auditable timely than ever previously analysts scientists can complete range sources single location standardised format reducing preparation time now received daily instead weekly monthly quarterly generating insight relevant current start provided usually statisticians understand how they design build tables meet needs clean join produced using dimensional modelling implementing tests documentation ensure output understandable accelerate production statistics management information mi science products need spend less transforming understanding complex messy deriving insights faster better technical skills solve new problems trusted consistent across cases meaning get same answers questions matter ask domain aligned source facilitating simpler transition heritage systems",
+    "url": "/san-eleventy-test/about/"
+  },  {
+    "title": "Blog",
+"description": "We use this blog to share what we're working on across the data engineering and analytics engineering professions. You'll find a range of posts on technical and non-technical topics.","section": "Home",    "layout": "collection",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/blog/"
+  },  {
+    "title": "Posts tagged ‘Documentation’",
+"section": "Tags",    "layout": "tag",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/tags/documentation/"
+  },  {
+    "title": "Posts tagged ‘GitHub’",
+"section": "Tags",    "layout": "tag",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/tags/github/"
+  },  {
+    "title": "Posts tagged ‘Good Practice’",
+"section": "Tags",    "layout": "tag",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/tags/good-practice/"
+  },  {
+    "title": "Posts tagged ‘Project Management’",
+"section": "Tags",    "layout": "tag",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/tags/project-management/"
+  },  {
+    "title": "Tags",
+"section": "Home",    "layout": "tags",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/tags/"
+  },  {
+    "title": "Get Started",
+"section": "Documentation",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/Documentation/get-started/"
+  },  {
+    "title": "Community",
+"section": "Documentation",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/Documentation/community/"
+  },  {
+    "title": "Learning and Development",
+"section": "Documentation",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/Documentation/learning-and-development/"
+  },  {
+    "title": "Documentation website under development",
+"section": "Home",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/Documentation/"
+  },  {
+    "title": "Standards and Principles",
+"section": "Documentation",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/Documentation/standards-and-principles/"
+  },  {
+    "title": "Deployment Tools",
+"description": "Deployment Tools","section": "About",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/about/deployment-tools/"
+  },  {
+    "title": "Monitoring and Observability Tools",
+"description": "Monitoring and Observability Tools","section": "About",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/about/monitoring-tools/"
+  },  {
+    "title": "Contact Us",
+"description": "Find out how to contact us and how to get support from SRE team.","section": "About",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "",
+    "url": "/san-eleventy-test/about/contact-us/"
+  },  {
+    "title": "Github Repositories",
+"description": "Find out all repositories, tools and service","section": "About",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "28 August 2024",
+    "templateContent": "context explained about page our data analytics engineers develop analytical pipelines self service tools acquire transform making available platform implement lake centric approach manage using cloud based object store follow typical process extract load producing cleaner more standardized format that downstream analysts expect ensuring reliability are responsible extracting standardising source whilst converting into user friendly this allows experienced moj users such scientists derive valuable insights with less time spent pre processing can then disseminate analysed through reports dashboards engineering diagram summarises these steps storage layers: key services use various depending volume frequency other characteristics support infrastructure rely aws serverless managed ensure scalability resilience security cost effectiveness container some services: metadata collected from multiple sources across external including amazon s3 file shares relational databases apis azure blob ingested approaches example database migration dms sftp api gateway imported directly consists glue catalog repository apache hive iceberg provide sql like interface iam secure access athena along dbt transformations processed python scheduled workflows airflow also make transformation run their own machine learning transformed saved",
+    "url": "/san-eleventy-test/about/github-repos/"
+  },  {
+    "title": "Guidance",
+"section": "Documentation",    "layout": "sub-navigation",
+    "hasFrontmatterDate": false,
+    "date": "29 August 2024",
+    "templateContent": "analytical platform ap data analysis made tools packages datasets creating applications that utilise within ministry justice moj provides development environments both python jupyterlab r rstudio allowing multiple ways query analyse model can find out more user guide cloud modern native hosting digital services built way teams : 1 deploy service application into 2 common tooling such monitoring logging alerting security scanning container images without needing configure manage infrastructure 3 implement zero downtime deploys scalability high availability",
+    "url": "/san-eleventy-test/Documentation/guidance/"
+  },  {
+    "title": "SRE Documentation",
+"description": "SRE Documentation  at the Ministry of Justice.",    "layout": "product",
+    "hasFrontmatterDate": false,
+    "date": "29 August 2024",
+    "templateContent": "! warning this site under development about find out more what sre team are where fit organisation documentation 're existing member ministry justice use our handbook how work blog working across",
+    "url": "/san-eleventy-test/"
+  }]
