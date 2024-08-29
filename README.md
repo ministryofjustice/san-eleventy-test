@@ -15,6 +15,6 @@ Then clone this repository to your local computer and `cd` to the local folder.
 
 Then to run the website locally, type `npx @11ty/eleventy --serve` into your command line. 
 
-The site should now be served at http://localhost:8080/data-and-analytics-engineering/. 
+The site should now be served at http://localhost:8080/san-eleventy-test/
 
 Happy editing!
