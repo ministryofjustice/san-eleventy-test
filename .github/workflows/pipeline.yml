@@ -12,7 +12,7 @@ on:
         type: choice
         required: true
         options:
-          - development
+          - dev
       version:
         description: Image version
         type: string
