@@ -13,7 +13,6 @@ on:
         required: true
         options:
           - development
-          - production
       version:
         description: Image version
         type: string
@@ -25,4 +24,13 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       push: true
+    secrets: inherit
+
+  deploy_to_dev:
+    name: Deploy to dev
+    uses: ./.github/workflows/deploy.yml
+    needs: build
+    with:
+      environment: development
+      version: ${{ needs.build.outputs.version }}
     secrets: inherit

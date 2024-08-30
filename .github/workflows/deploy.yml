@@ -20,7 +20,6 @@ on:
         required: true
         options:
           - development
-          - production
       version:
         description: Image version
         type: string
