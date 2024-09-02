@@ -1,5 +1,13 @@
 ---
 # Per environment values which override defaults in san-eleventy-test/values.yaml
 
-generic-prometheus-alerts:
-  alertSeverity: hmpps-sre-alerts-dev
+generic-service:
+  replicaCount: 1
+
+  ingress:
+    host: san-eleventy-test.hmpps.service.justice.gov.uk
+  env:
+    URL: "https://san-eleventy-test.hmpps.service.justice.gov.uk/"
+
+postgresDatabaseRestore:
+  enabled: false
