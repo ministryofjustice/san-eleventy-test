@@ -45,10 +45,10 @@ generic-service:
   #   [name of kubernetes secret]:
   #     [name of environment variable as seen by app]: [key of kubernetes secret to load]
 
-  namespace_secrets:
-    santest:
-      GITHUB_REPOSITORY: "GITHUB_REPOSITORY"
-      GITHUB_TOKEN: "GITHUB_TOKEN"
+  #namespace_secrets:
+   # santest:
+    #  GITHUB_REPOSITORY: "GITHUB_REPOSITORY"
+     # GITHUB_TOKEN: "GITHUB_TOKEN"
 
 generic-prometheus-alerts:
   targetApplication: san-eleventy-test
