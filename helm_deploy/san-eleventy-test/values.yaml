@@ -13,14 +13,21 @@ generic-service:
     port: 8080
 
   ingress:
-    enabled: false
+    enabled: true
+    host: app-hostname.local    # override per environment
+    tlsSecretName: san-eleventy-test
 
   # Due to a bug cant disable/override the sub chart.
   # https://github.com/helm/helm/pull/12162
   # Looks like it might be fixed, so...
 
-  livenessProbe: null
-  readinessProbe: null
+  livenessProbe:
+    httpGet:
+      path: /
+
+  readinessProbe:
+    httpGet:
+      path: /
 
   # livenessProbe:
   #   httpGet:
