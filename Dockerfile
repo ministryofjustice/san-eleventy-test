@@ -14,7 +14,6 @@ COPY . .
 
 # build site
 RUN npx @11ty/eleventy
-./dist/content/index.html
 
 # create nginx proxy to serve static files
 FROM nginxinc/nginx-unprivileged:1.25-alpine3.17
