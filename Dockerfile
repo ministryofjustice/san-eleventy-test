@@ -28,7 +28,7 @@ COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 # COPY --from=build --chown=101:101 /usr/share/nginx/html/assets ./contents/
 
 # set user to non-root
-USER 1000
+# USER 1000
 
 # start nginx
 CMD ["nginx", "-g", "daemon off;"]
