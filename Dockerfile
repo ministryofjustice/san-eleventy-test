@@ -14,6 +14,7 @@ COPY . .
 
 # build site
 RUN npx @11ty/eleventy
+./dist/content/index.html
 
 # create nginx proxy to serve static files
 FROM nginxinc/nginx-unprivileged:1.25-alpine3.17
@@ -26,7 +27,7 @@ COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 
 # copy pre-built static site into new image, resulting in a smaller image
 COPY --from=build /usr/src/app/dist ./
-COPY --from=build ./content/index.html ./
+COPY --from=build /usr/src/app/dist/content/index.html ./
 
 # set user to non-root
 USER 1000
