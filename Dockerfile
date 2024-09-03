@@ -25,7 +25,8 @@ WORKDIR /usr/share/nginx/html
 COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 
 # copy pre-built static site into new image, resulting in a smaller image
-COPY --from=build /usr/src/app/dist ./
+COPY --from=build /usr/src/app/node_modules ./
+COPY --from=build /usr/src/app/_site ./
 
 # set user to non-root
 USER 1000
