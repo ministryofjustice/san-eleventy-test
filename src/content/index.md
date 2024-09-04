@@ -1,29 +1,27 @@
 ---
 homepage: true
 layout: product
-title: SRE Documentation 
-description: SRE Documentation  at the Ministry of Justice.
+title: DPS Tech Team
+reviewed: 04-Sep-2024
+reviewAgain: 04-Dec-2024
 eleventyNavigation:
   key: Home
 ---
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    This site is under development.
-  </strong>
-</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
   <div class="grid-card">
-    <h2 class="govuk-heading-m"><a href="about/" class="govuk-link">About</a></h2>
-    <p class="govuk-body">Find out more about what SRE team are, what we do and where we fit in the organisation.</p>
+    <h2 class="govuk-heading-m"><a href="dpstechteamdocs/" class="govuk-link">DPS Tech Team docs</a></h2>
+    <p class="govuk-body">This documentation describes the products, platforms and standards produced by the DPS Tech Team.</p>
   </div>
   <div class="grid-card">
-    <h2 class="govuk-heading-m"><a href="Documentation/" class="govuk-link">Documentation</a></h2>
-    <p class="govuk-body">If you're an existing member of the SRE team member  at the Ministry of Justice, use our handbook to find out more about how we work.</p>
+    <h2 class="govuk-heading-m"><a href="applicationplatform/" class="govuk-link">HMPPS Application Platform</a></h2>
+    <p class="govuk-body">This documentation describes the standards we adhere to when writing services.</p>
   </div>
   <div class="grid-card">
-    <h2 class="govuk-heading-m"><a href="blog/" class="govuk-link">Blog</a></h2>
-    <p class="govuk-body">Find out what we're working on across the SRE.</p>
+    <h2 class="govuk-heading-m"><a href="servicestandarddoc/" class="govuk-link">Service Standard</a></h2>
+    <p class="govuk-body">This document describes the application platform used across HMPPS to share common development patterns.</p>
+  </div>
+  <div class="grid-card">
+    <h2 class="govuk-heading-m"><a href="authuserguide/" class="govuk-link">Auth User Guide</a></h2>
+    <p class="govuk-body">This document describes HMPPS Auth, how it can be used and what you must consider before integrating with the service.</p>
   </div>
 </div>
