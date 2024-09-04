@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-title: DPS Tech Team docsAbout
+title: DPS Tech Team docs
 order: 1
 eleventyNavigation:
   key: DPS Tech Team docs
