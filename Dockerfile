@@ -26,7 +26,7 @@ COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 
 # copy pre-built static site into new image, resulting in a smaller image
 COPY --from=build /usr/src/app/dist ./
-COPY --from=build /usr/src/app/dist/content/ ./
+#COPY --from=build /usr/src/app/dist/content/ ./
 
 # set user to non-root
 USER 1000
