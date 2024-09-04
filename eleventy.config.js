@@ -28,8 +28,8 @@ module.exports = function (eleventyConfig) {
         markdownTemplateEngine: 'njk',
         dir: {
             input: './src/content',
+            output: './dist',
             layouts: '../../node_modules/@x-govuk/govuk-eleventy-plugin/layouts',
-        },
-        pathPrefix: '/san-eleventy-test/',
+        }
     }
 };
