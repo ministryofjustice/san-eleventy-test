@@ -15,9 +15,6 @@ module.exports = function (eleventyConfig) {
         },
         stylesheets: ["/assets/output.css"]
     })
-    #eleventyConfig.addCollection("posts", function (collectionApi) {
-       # return collectionApi.getFilteredByGlob("./src/content/blog/posts/*.md").reverse()
-  #  })
     eleventyConfig.addWatchTarget('./tailwind.config.js')
     eleventyConfig.addWatchTarget('./src/assets/css/input.css')
     eleventyConfig.addPassthroughCopy({ './_tmp/output.css': './assets/output.css' })
