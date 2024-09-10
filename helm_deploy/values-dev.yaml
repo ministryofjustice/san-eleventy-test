@@ -3,9 +3,6 @@
 
 generic-service:
   replicaCount: 1
-
-  imagePullSecrets: 
-    name: sre-doc
     
   ingress:
     host: san-eleventy-test.hmpps.service.justice.gov.uk
