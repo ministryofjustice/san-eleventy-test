@@ -11,9 +11,6 @@ generic-service:
     repository: ghcr.io/ministryofjustice/san-eleventy-test
     tag: xxx    # override at deployment time
     port: 8080
-    
-  imagePullSecrets: 
-       - sre-doc
        
   ingress:
     enabled: true
@@ -55,6 +52,8 @@ generic-service:
   #   [name of kubernetes secret]:
   #     [name of environment variable as seen by app]: [key of kubernetes secret to load]
 
+imagePullSecrets: 
+  - sre-doc
   #namespace_secrets:
    # santest:
     #  GITHUB_REPOSITORY: "GITHUB_REPOSITORY"
