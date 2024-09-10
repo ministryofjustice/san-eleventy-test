@@ -12,7 +12,8 @@ generic-service:
     tag: xxx    # override at deployment time
     port: 8080
     
-  imagePullSecrets: sre-doc
+  imagePullSecrets: 
+    name: sre-doc
 
   ingress:
     enabled: true
