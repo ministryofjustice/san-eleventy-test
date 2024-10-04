@@ -35,16 +35,13 @@ on:
         type: boolean
 
 jobs:
-  build_test_node:
-    name: Build node
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/node_build_test.yml@HEAT-353-typescript-node-workflow
-    secrets: inherit
+
   test_docker_build:
     name: Build docker image from hmpps-github-actions
     uses: ministryofjustice/hmpps-github-actions/.github/workflows/test_docker_build.yml@feat/HEAT-354-docker-build
     secrets: inherit
     with:
-      docker_registry: ${{ inputs.docker_registry }}
-      registry_org: ${{ inputs.registry_org }}
+      docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
+      registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
       additional_docker_tag: ${{ inputs.additional_docker_tag }}
-      push: ${{ inputs.push}}
+      push: ${{ inputs.push || 'true' }}
