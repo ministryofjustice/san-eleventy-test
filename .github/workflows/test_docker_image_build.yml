@@ -33,11 +33,6 @@ on:
         required: true
         default: 'true'
         type: boolean
-        
-    secrets:
-      HMPPS_SRE_SLACK_BOT_TOKEN:
-        description: 'Slack bot token'
-        required: false
 
 jobs:
   build_test_node:
