@@ -22,6 +22,6 @@ eleventyNavigation:
   </div>
   <div class="grid-card">
     <h2 class="govuk-heading-m"><a href="authuserguide/" class="govuk-link">Auth User Guide</a></h2>
-    <p class="govuk-body">This document describes HMPPS Auth, how it can be used and what you must consider before integrating with the service.</p>
+    <p class="govuk-body">This document describes HMPPS Auth , how it can be used and what you must consider before integrating with the service.</p>
   </div>
 </div>
