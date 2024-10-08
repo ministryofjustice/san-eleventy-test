@@ -42,7 +42,7 @@ jobs:
 
   test_docker_build:
     name: Build docker image from hmpps-github-actions
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/build_multiplatform_docker.yml@feat/HEAT-354-docker-build
+    uses: ministryofjustice/hmpps-github-actions/.github/workflows/build_multiplatform_docker.yml@feat/HEAT-344-share-app-version-across-jobs
     secrets: inherit
     with:
       docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
