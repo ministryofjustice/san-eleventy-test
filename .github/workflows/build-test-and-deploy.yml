@@ -1,4 +1,4 @@
-name: Docker image build and push 
+name: Pipeline
 
 on:
   push:
@@ -33,20 +33,25 @@ on:
         required: true
         default: true
         type: boolean
+      docker_multiplatform:
+        description: docker multiplatform build or not
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: read
   packages: write
-  
+
 jobs:
 
   test_docker_build:
     name: Build docker image from hmpps-github-actions
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/build_docker.yml@feat/HEAT-354-docker-build
+    uses: ministryofjustice/hmpps-github-actions/.github/workflows/test_docker_build.yml@feat/HEAT-354-docker-build
     secrets: inherit
     with:
       docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
       registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
       additional_docker_tag: ${{ inputs.additional_docker_tag }}
       push: ${{ inputs.push || true }}
-
+      docker_multiplatform: ${{ inputs.docker_multiplatform }}
