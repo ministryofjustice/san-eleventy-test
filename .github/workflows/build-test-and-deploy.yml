@@ -1,4 +1,4 @@
-name: Pipeline
+ename: Pipeline
 
 on:
   push:
@@ -47,7 +47,7 @@ jobs:
 
   test_docker_build:
     name: Build docker image from hmpps-github-actions
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/build-test-and-deploy.yml@feat/HEAT-344-share-app-version-across-jobs
+    uses: ministryofjustice/hmpps-github-actions/.github/workflows/create_app_version.yml@feat/HEAT-344-create-deploy_env_workflow
     secrets: inherit
     with:
       docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
