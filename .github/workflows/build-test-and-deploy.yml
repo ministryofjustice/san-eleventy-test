@@ -1,4 +1,4 @@
-name: Pipeline
+ename: Pipeline
 
 on:
   push:
@@ -6,13 +6,57 @@ on:
       - main
 
   workflow_dispatch:
-  
+    inputs:
+      docker_registry:
+        description: Docker registry
+        required: true
+        default: 'ghcr.io'
+        type: choice
+        options:
+          - 'ghcr.io'
+          - 'quay.io'
+      registry_org:
+        description: Docker registry organisation
+        required: true
+        default: 'ministryofjustice'
+        type: choice
+        options:
+          - 'ministryofjustice'
+          - 'hmpps'
+      additional_docker_tag:
+        description: Additional docker tag that can be used to specify stable tags
+        required: false
+        default: ''
+        type: string
+      push:
+        description: Push docker image to registry flag
+        required: true
+        default: true
+        type: boolean
+      docker_multiplatform:
+        description: docker multiplatform build or not
+        required: true
+        default: true
+        type: boolean
+
 permissions:
   contents: read
   packages: write
 
 jobs:
 
-  test_docker_build:
+  create_app_version:
     name: Build docker image from hmpps-github-actions
     uses: ministryofjustice/hmpps-github-actions/.github/workflows/create_app_version.yml@feat/HEAT-344-create-deploy_env_workflow
+
+  test_docker_build:
+    name: Build docker image from hmpps-github-actions
+    uses: ministryofjustice/hmpps-github-actions/.github/workflows/docker_build.yml@feat/HEAT-344-create-deploy_env_workflow
+    secrets: inherit
+    with:
+      docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
+      registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
+      additional_docker_tag: ${{ inputs.additional_docker_tag }}
+      push: ${{ inputs.push || true }}
+      docker_multiplatform: ${{ inputs.docker_multiplatform || false }}
+      app_version: ${{ needs.create_app_version.outputs.version }}
