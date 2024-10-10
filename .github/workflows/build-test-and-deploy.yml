@@ -51,6 +51,7 @@ jobs:
 
   test_docker_build:
     name: Build docker image from hmpps-github-actions
+    needs: [ create_app_version ]
     uses: ministryofjustice/hmpps-github-actions/.github/workflows/docker_build.yml@feat/HEAT-344-create-deploy_env_workflow
     secrets: inherit
     with:
