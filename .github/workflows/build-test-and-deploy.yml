@@ -6,39 +6,7 @@ on:
       - main
 
   workflow_dispatch:
-    inputs:
-      docker_registry:
-        description: Docker registry
-        required: true
-        default: 'ghcr.io'
-        type: choice
-        options:
-          - 'ghcr.io'
-          - 'quay.io'
-      registry_org:
-        description: Docker registry organisation
-        required: true
-        default: 'ministryofjustice'
-        type: choice
-        options:
-          - 'ministryofjustice'
-          - 'hmpps'
-      additional_docker_tag:
-        description: Additional docker tag that can be used to specify stable tags
-        required: false
-        default: ''
-        type: string
-      push:
-        description: Push docker image to registry flag
-        required: true
-        default: true
-        type: boolean
-      docker_multiplatform:
-        description: docker multiplatform build or not
-        required: true
-        default: true
-        type: boolean
-
+  
 permissions:
   contents: read
   packages: write
