@@ -1,3 +1,35 @@
+name: Security trivy dependency check
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      docker_registry:
+        description: Docker registry
+        required: true
+        default: 'ghcr.io'
+
+permissions:
+  contents: read
+
+jobs:
+  get_production_image_details:
+    name: Get production image details from Service Catalogue 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Json data from curl 
+        id: json_data
+        run:
+          OUTPUT=$(curl -X GET -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
+          echo "$OUTPUT"
+      - name: Print output 
+        run:
+          echo "id= ${{ steps.request.outputs.id }}"
+          echo "name= ${{ steps.request.outputs.name }}"
+          
 # name: Pipeline
 
 # on:
@@ -59,35 +91,4 @@
 #       registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
 #       additional_docker_tag: ${{ inputs.additional_docker_tag }}
 
-name: Security trivy dependency check
-
-on:
-  push:
-    branches:
-      - main
-
-  workflow_dispatch:
-    inputs:
-      docker_registry:
-        description: Docker registry
-        required: true
-        default: 'ghcr.io'
-
-permissions:
-  contents: read
-
-jobs:
-  get_production_image_details:
-    name: Get production image details from Service Catalogue 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Json data from curl 
-        id: json_data
-        run:
-          OUTPUT=$(curl -X GET -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
-          echo "$OUTPUT"
-      - name: Print output 
-        run:
-          echo "id= ${{ steps.request.outputs.id }}"
-          echo "name= ${{ steps.request.outputs.name }}"
       
