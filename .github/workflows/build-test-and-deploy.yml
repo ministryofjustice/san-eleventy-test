@@ -84,8 +84,7 @@ jobs:
       - name: Get Json data from curl 
         id: json_data
         run:
-          OUTPUT=$(curl -X GET \
-          -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
+          OUTPUT=$(curl -X GET -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
           echo "::set-output name=receipt_handle::$OUTPUT"
       - name: Print output 
         run:
