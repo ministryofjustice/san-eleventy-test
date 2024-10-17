@@ -62,7 +62,16 @@
 name: Security trivy dependency check
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      docker_registry:
+        description: Docker registry
+        required: true
+        default: 'ghcr.io'
 
 permissions:
   contents: read
