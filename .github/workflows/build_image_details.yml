@@ -24,7 +24,7 @@ jobs:
         id: json_data
         run:
           OUTPUT=$(curl -X GET -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
-          echo "$OUTPUT"
+          echo "${OUTPUT}"
       # - name: Print output 
       #   run:
       #     echo "id= ${{ steps.request.outputs.id }}"
