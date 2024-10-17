@@ -1,63 +1,85 @@
-name: Pipeline
+# name: Pipeline
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+#   workflow_dispatch:
+#     inputs:
+#       docker_registry:
+#         description: Docker registry
+#         required: true
+#         default: 'ghcr.io'
+#         type: choice
+#         options:
+#           - 'ghcr.io'
+#           - 'quay.io'
+#       registry_org:
+#         description: Docker registry organisation
+#         required: true
+#         default: 'ministryofjustice'
+#         type: choice
+#         options:
+#           - 'ministryofjustice'
+#           - 'hmpps'
+#       additional_docker_tag:
+#         description: Additional docker tag that can be used to specify stable tags
+#         required: false
+#         default: ''
+#         type: string
+#       push:
+#         description: Push docker image to registry flag
+#         required: true
+#         default: true
+#         type: boolean
+#       docker_multiplatform:
+#         description: docker multiplatform build or not
+#         required: true
+#         default: true
+#         type: boolean
+
+# permissions:
+#   contents: read
+#   packages: write
+
+# jobs:
+
+#   create_app_version:
+#     name: Build docker image from hmpps-github-actions
+#     uses: ministryofjustice/hmpps-github-actions/.github/workflows/create_app_version.yml@feat/HEAT-344-create-deploy_env_workflow
+
+#   test_docker_build:
+#     name: Build docker image from hmpps-github-actions
+#     needs: [ create_app_version ]
+#     uses: ministryofjustice/hmpps-github-actions/.github/workflows/docker_build.yml@feat/HEAT-344-create-deploy_env_workflow
+#     secrets: inherit
+#     with:
+#       docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
+#       registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
+#       additional_docker_tag: ${{ inputs.additional_docker_tag }}
+
+name: Security trivy dependency check
 
 on:
-  push:
-    branches:
-      - main
-
-  workflow_dispatch:
-    inputs:
-      docker_registry:
-        description: Docker registry
-        required: true
-        default: 'ghcr.io'
-        type: choice
-        options:
-          - 'ghcr.io'
-          - 'quay.io'
-      registry_org:
-        description: Docker registry organisation
-        required: true
-        default: 'ministryofjustice'
-        type: choice
-        options:
-          - 'ministryofjustice'
-          - 'hmpps'
-      additional_docker_tag:
-        description: Additional docker tag that can be used to specify stable tags
-        required: false
-        default: ''
-        type: string
-      push:
-        description: Push docker image to registry flag
-        required: true
-        default: true
-        type: boolean
-      docker_multiplatform:
-        description: docker multiplatform build or not
-        required: true
-        default: true
-        type: boolean
+  workflow_call:
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
-
-  create_app_version:
-    name: Build docker image from hmpps-github-actions
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/create_app_version.yml@feat/HEAT-344-create-deploy_env_workflow
-
-  test_docker_build:
-    name: Build docker image from hmpps-github-actions
-    needs: [ create_app_version ]
-    uses: ministryofjustice/hmpps-github-actions/.github/workflows/docker_build.yml@feat/HEAT-344-create-deploy_env_workflow
-    secrets: inherit
-    with:
-      docker_registry: ${{ inputs.docker_registry || 'ghcr.io' }}
-      registry_org: ${{ inputs.registry_org || 'ministryofjustice' }}
-      additional_docker_tag: ${{ inputs.additional_docker_tag }}
-      push: ${{ inputs.push || true }}
-      docker_multiplatform: ${{ inputs.docker_multiplatform || false }}
-      app_version: ${{ needs.create_app_version.outputs.version }}
+  get_production_image_details:
+    name: Get production image details from Service Catalogue 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Json data from curl 
+        id: json_data
+        run:
+          OUTPUT=$(curl -X GET \
+          -g "https://service-catalogue-dev.hmpps.service.justice.gov.uk/v1/components?populate=environment&filters[name][$contains]=hmpps-developer-portal")
+          echo "::set-output name=receipt_handle::$OUTPUT"
+      - name: Print output 
+        run:
+          echo "id= ${{ steps.request.outputs.id }}"
+          echo "name= ${{ steps.request.outputs.name }}"
+      
